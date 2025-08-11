@@ -7,13 +7,14 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-
+    scroll-behavior: smooth;
+    
     /* Background image styles */
     background-image: url('bc.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed; /* Optional: Makes the background static while scrolling */
+    background-attachment: fixed;
 }
 
 /* Header & Navigation */
@@ -22,12 +23,13 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 2.5rem 4rem;
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     z-index: 10;
-    box-sizing: border-box; /* To include padding in width calculation */
+    box-sizing: border-box;
+    background: transparent;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
 .logo {
@@ -113,8 +115,10 @@ nav ul li a:hover::after {
     position: relative;
     z-index: 5;
     padding: 0 2rem;
-    background: rgba(0,0,0,0.4); /* Dark overlay for better text readability */
+    background: rgba(0,0,0,0.4);
     color: white;
+    min-height: 100vh;
+    padding-top: 100px;
 }
 
 .hero-content {
@@ -192,6 +196,364 @@ nav ul li a:hover::after {
     transform: translateY(-5px);
 }
 
+/* Common Section Styles */
+section {
+    padding: 8rem 4rem;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 5;
+    color: white;
+    min-height: 100vh;
+}
+
+.section-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: #e91e63;
+    margin: 1rem auto 0;
+    border-radius: 2px;
+}
+
+/* Features Section */
+.features-section {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+.feature-item {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 2.5rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.feature-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.feature-item .icon {
+    font-size: 3.5rem;
+    color: #e91e63;
+    margin-bottom: 1.5rem;
+}
+
+.feature-item h3 {
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.feature-item p {
+    font-size: 0.95rem;
+    color: #ddd;
+}
+
+/* Pricing Section */
+.pricing-section {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+.pricing-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.pricing-card.highlighted {
+    background-color: #e91e63;
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(233, 30, 99, 0.3);
+}
+
+.pricing-card.highlighted h3,
+.pricing-card.highlighted p,
+.pricing-card.highlighted .plan-price {
+    color: white;
+}
+
+.pricing-card .plan-price .price {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.pricing-card .plan-price .period {
+    font-size: 1rem;
+    color: #ddd;
+    font-weight: 400;
+}
+
+.pricing-card.highlighted .plan-price .period {
+    color: #eee;
+}
+
+.pricing-card .plan-features {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+}
+
+.pricing-card .plan-features li {
+    margin-bottom: 1rem;
+    color: #eee;
+    font-weight: 500;
+}
+
+.pricing-card.highlighted .plan-features li {
+    color: white;
+}
+
+.pricing-card .plan-features li .fa-check-circle {
+    color: #4CAF50;
+    margin-right: 10px;
+}
+
+.pricing-card.highlighted .plan-features li .fa-check-circle {
+    color: #fff;
+}
+
+.pricing-card .plan-features li .fa-times-circle {
+    color: #F44336;
+    margin-right: 10px;
+}
+
+.pricing-card.highlighted .plan-features li .fa-times-circle {
+    color: #fff;
+}
+
+.plan-button {
+    background-color: #e91e63;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.pricing-card.highlighted .plan-button {
+    background-color: white;
+    color: #e91e63;
+}
+
+.pricing-card.highlighted .plan-button:hover {
+    background-color: #eee;
+}
+
+.plan-button:hover {
+    background-color: #c2185b;
+    transform: scale(1.05);
+}
+
+/* Testimonials Section */
+.testimonials-section {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.testimonials-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+.testimonial-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    max-width: 500px;
+    text-align: left;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.testimonial-card p {
+    font-size: 1rem;
+    font-style: italic;
+    color: #ddd;
+    margin-bottom: 1.5rem;
+}
+
+.client-info {
+    display: flex;
+    align-items: center;
+}
+
+.client-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.client-details h4 {
+    font-size: 1.2rem;
+    margin: 0;
+    color: white;
+}
+
+.client-details p {
+    font-size: 0.9rem;
+    margin: 0;
+    color: #ddd;
+    font-style: normal;
+}
+
+/* Contact Section */
+.contact-section {
+    background: rgba(0, 0, 0, 0.4);
+    color: white;
+}
+
+.contact-text {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    color: #ccc;
+}
+
+.contact-button {
+    background-color: #e91e63;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-button:hover {
+    background-color: #c2185b;
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    background-color: #222;
+    color: #ccc;
+    padding: 4rem;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    text-align: left;
+}
+
+.footer-column .logo {
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.footer-column p {
+    font-size: 0.9rem;
+    line-height: 1.8;
+}
+
+.social-links {
+    margin-top: 1rem;
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    color: white;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #e91e63;
+}
+
+.footer-column h4 {
+    color: white;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    color: #e91e63;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #444;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 0.8rem;
+    color: #888;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     header {
@@ -199,21 +561,23 @@ nav ul li a:hover::after {
         align-items: flex-start;
         padding: 1.5rem 2rem;
     }
-    
+
     .logo {
-        margin-bottom: 1.5rem;
+        margin-bottom: 1rem;
     }
 
     nav ul {
         margin-top: 10px;
+        flex-wrap: wrap;
     }
 
     nav ul li {
-        margin-left: 2rem;
+        margin-left: 1.5rem;
+        margin-bottom: 10px;
     }
 
     .get-started {
-        margin-top: 1.5rem;
+        margin-top: 1rem;
     }
 
     .hero h1 {
@@ -223,14 +587,37 @@ nav ul li a:hover::after {
     .hero p {
         font-size: 0.9rem;
     }
-
+    
     .social-icons {
         bottom: 20px;
     }
 
-    .social-icons a {
-        width: 35px;
-        height: 35px;
-        margin: 0 5px;
+    section {
+        padding: 4rem 2rem;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+    }
+
+    .features-grid, .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .testimonials-container {
+        flex-direction: column;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-column .logo {
+        justify-content: center;
+    }
+
+    .social-links {
+        justify-content: center;
     }
 }
