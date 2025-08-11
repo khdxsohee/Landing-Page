@@ -18,27 +18,190 @@
         </div>
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Product</a></li>
-                <li><a href="#">About Us</a></li>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
         <button class="get-started">Get Started</button>
     </header>
 
-    <main class="hero">
+    <main class="hero" id="hero">
         <div class="hero-content">
             <h1>Web Design</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam imperdiet lobortis metus. Proin lectus orci, venenatis pharetra, egestas vitae, eros. Learn More...</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam imperdiet lobortis metus. Proin lectus orci, venenatis pharetra, egestas vitae, eros.</p>
             <button class="learn-more">Learn More...</button>
         </div>
         <div class="social-icons">
             <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fas fa-at"></i></a>
-            <a href="#"><i class="fas fa-hashtag"></i></a>
-            <a href="#"><i class="fas fa-ampersand"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
         </div>
     </main>
+
+    <section class="features-section" id="features">
+        <h2 class="section-title">Our Features</h2>
+        <div class="features-grid">
+            <div class="feature-item">
+                <i class="fas fa-rocket icon"></i>
+                <h3>Fast Performance</h3>
+                <p>We optimize our designs for speed to give you the best user experience.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-mobile-alt icon"></i>
+                <h3>Fully Responsive</h3>
+                <p>Your website will look perfect on any device, from desktops to mobile phones.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-lock icon"></i>
+                <h3>Secure & Reliable</h3>
+                <p>We ensure your data is safe with modern security protocols and hosting solutions.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-cogs icon"></i>
+                <h3>Customizable</h3>
+                <p>Tailor every aspect of your website to perfectly match your brand.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing-section" id="pricing">
+        <h2 class="section-title">Pricing</h2>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <div class="plan-header">
+                    <h3>Basic Plan</h3>
+                    <p>For small projects</p>
+                </div>
+                <div class="plan-price">
+                    <span class="price">$29</span>
+                    <span class="period">/month</span>
+                </div>
+                <ul class="plan-features">
+                    <li><i class="fas fa-check-circle"></i> 1 Project</li>
+                    <li><i class="fas fa-check-circle"></i> 5 Pages</li>
+                    <li><i class="fas fa-times-circle"></i> No Support</li>
+                    <li><i class="fas fa-times-circle"></i> No Analytics</li>
+                </ul>
+                <button class="plan-button">Get Started</button>
+            </div>
+            <div class="pricing-card highlighted">
+                <div class="plan-header">
+                    <h3>Pro Plan</h3>
+                    <p>For growing businesses</p>
+                </div>
+                <div class="plan-price">
+                    <span class="price">$59</span>
+                    <span class="period">/month</span>
+                </div>
+                <ul class="plan-features">
+                    <li><i class="fas fa-check-circle"></i> 5 Projects</li>
+                    <li><i class="fas fa-check-circle"></i> Unlimited Pages</li>
+                    <li><i class="fas fa-check-circle"></i> Priority Support</li>
+                    <li><i class="fas fa-check-circle"></i> Basic Analytics</li>
+                </ul>
+                <button class="plan-button">Get Started</button>
+            </div>
+            <div class="pricing-card">
+                <div class="plan-header">
+                    <h3>Enterprise Plan</h3>
+                    <p>For large organizations</p>
+                </div>
+                <div class="plan-price">
+                    <span class="price">$99</span>
+                    <span class="period">/month</span>
+                </div>
+                <ul class="plan-features">
+                    <li><i class="fas fa-check-circle"></i> Unlimited Projects</li>
+                    <li><i class="fas fa-check-circle"></i> Unlimited Pages</li>
+                    <li><i class="fas fa-check-circle"></i> 24/7 Support</li>
+                    <li><i class="fas fa-check-circle"></i> Advanced Analytics</li>
+                </ul>
+                <button class="plan-button">Get Started</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials-section" id="testimonials">
+        <h2 class="section-title">What Our Clients Say</h2>
+        <div class="testimonials-container">
+            <div class="testimonial-card">
+                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam imperdiet lobortis metus."</p>
+                <div class="client-info">
+                    <img src="https://via.placeholder.com/60" alt="Client 1" class="client-avatar">
+                    <div class="client-details">
+                        <h4>John Doe</h4>
+                        <p>CEO, Company</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <p>"Proin lectus orci, venenatis pharetra, egestas vitae, eros. Excellent service and great team."</p>
+                <div class="client-info">
+                    <img src="https://via.placeholder.com/60" alt="Client 2" class="client-avatar">
+                    <div class="client-details">
+                        <h4>Jane Smith</h4>
+                        <p>CTO, Tech Solutions</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <h2 class="section-title">Get in Touch</h2>
+        <p class="contact-text">We would love to hear from you. Feel free to reach out with any questions.</p>
+        <button class="contact-button">Contact Us</button>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column about">
+                <div class="logo">
+                    <div class="logo-icon"></div>
+                    <span>Logo</span>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam imperdiet lobortis metus.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#">Web Design</a></li>
+                    <li><a href="#">Web Development</a></li>
+                    <li><a href="#">Digital Marketing</a></li>
+                    <li><a href="#">UI/UX Design</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Contact Us</h4>
+                <ul>
+                    <li><a href="#">info@example.com</a></li>
+                    <li><a href="#">+123 456 7890</a></li>
+                    <li><a href="#">123 Main Street, City</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 YourCompany. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
